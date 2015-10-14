@@ -1,0 +1,21 @@
+{% if result_list %}
+    <ul>
+    {% for result in result_list %}
+        <li>
+        	<a href = {{ result }}>{{ result }}</a>
+        </li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No results are available.</p>
+{% endif %}
+
+ <form align="center" action="" name="P" method="post">
+ {% csrf_token %}
+	{% if page > 1 %}
+ 	<input type="submit" name = "P" value="<- Previous Page">
+	{% endif %}
+	<input type="submit" name = "N" value="Next Page ->">
+</form>
+
+ <a href="http://127.0.0.1:8000">Back to Home Page</a>

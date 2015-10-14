@@ -1,0 +1,18 @@
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+<title>Public Opinion Finder</title>
+<style type="text/css">.newStyle1{font-family: Cambria,Cochin, Georgia,Times, "Times New Roman", serif;}#Text1 {width: 611px;height: 26px;}
+</style><br><br><br>
+<body>
+	<h1><center>Welcome to Public Opinion Finder</center></h1><br><br><br><br>
+	<form align="center" action="find/" method="post">
+	{% csrf_token %}
+		<input id="key_word" type="text" name="key_word" maxlength="128" style = "width:512"> 
+		<input type="submit" value="Find !">
+	</form>
+	<center>
+	{% load staticfiles %}
+	<img src="{% static "Search_Engine/images/background1.gif" %}" style="height: 220px; width: 220px; margin-left: 0px"/>
+	<img src="{% static "Search_Engine/images/background2.gif" %}" style="height: 180px; width: 320px; margin-left: 30px"/>
+	</center>
+	<a href = "http://www.uvic.ca" align="right">Powered by Uvic</a>
+</body>
